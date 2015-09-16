@@ -1,0 +1,8 @@
+\\SERVER1\RedirectedFolders\franz\My Documents\SharpDevelop Projects\franz\franz\bin\Debug\franz.exe.config
+\\SERVER1\RedirectedFolders\franz\My Documents\SharpDevelop Projects\franz\franz\bin\Debug\franz.exe
+\\SERVER1\RedirectedFolders\franz\My Documents\SharpDevelop Projects\franz\franz\bin\Debug\franz.pdb
+\\SERVER1\RedirectedFolders\franz\My Documents\SharpDevelop Projects\franz\franz\obj\Debug\franz.csprojResolveAssemblyReference.cache
+\\SERVER1\RedirectedFolders\franz\My Documents\SharpDevelop Projects\franz\franz\obj\Debug\franz.csproj.GenerateResource.Cache
+\\SERVER1\RedirectedFolders\franz\My Documents\SharpDevelop Projects\franz\franz\obj\Debug\franz.exe
+\\SERVER1\RedirectedFolders\franz\My Documents\SharpDevelop Projects\franz\franz\obj\Debug\franz.pdb
+\\SERVER1\RedirectedFolders\franz\My Documents\SharpDevelop Projects\franz\franz\obj\Debug\franz.DataMining.resources
