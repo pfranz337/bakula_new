@@ -26,6 +26,8 @@ namespace franz
 		const int MIN_POCET_ZAZNAMU = 0;
 		const int MIN_POCET_TRID_PRED_A = 1;
 		
+		char[] splitter = {';', ','};			//podle ceho ma tvorit tabulku
+		
 		List<List<Uzel>> strom = new List<List<Uzel>>();		//postupny vyvoj rozhodovaciho stromu
 		List<Uzel> uzlyVKrocich = new List<Uzel>();				//uzly vznikle v jednotlivych krosich	
 		int start = 0;
@@ -37,32 +39,33 @@ namespace franz
 			// The InitializeComponent() call is required for Windows Forms designer support.
 			//
 			InitializeComponent();
-			algoritmy.SelectedIndex=0;
+			algoritmy.SelectedIndex=0;		//vybrani prvniho itemu v combu
 			
 			//
 			// TODO: Add constructor code after the InitializeComponent() call.
 			//
 		}
-		
+		//getter pro cely strom
 		public List<List<Uzel>> Strom {
 			get {
 				return strom;
 			}
 		}
-
+		//pomocny list pro kazdy krok algoritmu pred dalsim krokem se ulozi do stromu :)		
 		public List<Uzel> UzlyVKrocich {
 			get {
 				return uzlyVKrocich;
 			}
 		}
 
-		int klikOpen = 0;
+		//metoda pro otevreni a nacteni dat ze souboru - data se ukladaji do prvni tabulky v uzlu typu Uzel 
+		int klikOpen = 0;	//kontrola pro opetvne kliknuti na open
 		void openClick(object sender, EventArgs e)
 		{
 			krok.Enabled = true;
 			spust.Enabled = true;
 			klikOpen++;
-			if (klikOpen > 1){
+			if (klikOpen > 1){	//pokud uz bylo kliknuto vse nastav do default
 				panel1.Controls.Clear(); vypocty.Items.Clear(); prediktori.Items.Clear(); pred_atribut.Items.Clear(); sloupceTab.Items.Clear(); 
 				algoritmy.Enabled = true;
 				klikOpen=1; setCil.Enabled = true;
@@ -72,13 +75,13 @@ namespace franz
 			}
 			var main = new DataTable();						//vstupni tabulka		
 			
-			//const string path = "data.csv";
+			openFile.Filter = "CSV Files (.csv)|*.csv";	//filter hodnot pro cteni souboru
 			openFile.ShowDialog();
 			string path = openFile.FileName;
 			var sr = new StreamReader(path, Encoding.Default);
 			string s = sr.ReadLine();
-			string []hlavicka = s.Split(';');
-			sloupceTab.Items.AddRange(hlavicka);
+			string []hlavicka = s.Split(splitter);
+			sloupceTab.Items.AddRange(hlavicka);		//pridani atributu do listboxu pro uvodni vyber
 			
 			//plneni vstupni tabulky
 			var cols = new DataColumn[hlavicka.Length];
@@ -89,21 +92,22 @@ namespace franz
 			main.Columns.AddRange(cols);
 			while ((s = sr.ReadLine()) != null) {
 			
-				string []row = s.Split(';');
+				string []row = s.Split(splitter);
 				main.Rows.Add(row);
-			}												
-				
+			}										
+			
+			//vytvoreni prvniho uzlu ve stromu	
 			var u = new Uzel();
 			u.Design.Data = main;
 			uzlyVKrocich.Add(u);
 			strom.Add(uzlyVKrocich);
-			panel1.Controls.Add(u.Design.Uzel);
+			panel1.Controls.Add(u.Design.UzelB);
 				
 			sr.Close();
 			itemDolu.Enabled = true;
 			predNahoru.Enabled = true;
 		}	
-
+		//metody pro prohazovani itemu mezi listboxy --- START
 		void addToPrediktori(object sender, EventArgs e)
 		{
 			prohazujItem(sloupceTab, prediktori);
@@ -136,7 +140,9 @@ namespace franz
 			setCil.Enabled = false;
 			cilNahoru.Enabled = true;
 		}
+		//metody pro prohazovani itemu mezi listboxy --- END
 		
+		//naplneni prvniho uzlu
 		private void firstSetUzel(){
 			var pom = new List<Prediktor>();
 			foreach (string s in prediktori.Items)
@@ -150,7 +156,7 @@ namespace franz
 			
 		}
 		
-		
+		//krokovani		
 		void KrokClick(object sender, EventArgs e)
 		{
 			spust.Enabled = false;
@@ -160,11 +166,13 @@ namespace franz
 			projdi(uzly);
 		}
 		
+		//spusteni
 		void SpustClick(object sender, EventArgs e)
 		{
 			run();
 		}
 		
+		//metoda pro automaticke prochazeni
 		private void run(){
 			krok.Enabled = false;
 			spust.Enabled = false;
@@ -177,25 +185,27 @@ namespace franz
 				run();
 		}
 		
+		
+		//samotne prochazeni prediktoru v uzlu
 		Dictionary<string, List<Kategorie>> tabulkaZavislosti; bool stop=true;
 		private void projdi(List<Uzel> uzly){
 			int cisloKroku = strom.Count;
 			vypocty.Items.Add(string.Format("Krok: {0}", cisloKroku));
 			stop = true;
 			foreach (Uzel u in uzly) {	//zde provadeni operaci po krocich
-				u.pocitaniKategorii();
-				tabulkaZavislosti = u.pocitaniKategoriiVZavislosti();
+				u.pocitaniKategorii();		//spocitej cetnosti trid prediktoru
+				tabulkaZavislosti = u.pocitaniKategoriiVZavislosti();		//vytvoreni tabulky zavisloti mezi prediktory a predikovanym atributem
 				/// 
 				/// 
 				/// STOP KRITERIA V PODMINCE
 				/// 
 				/// 
-				if (u.PredikovanyAtribut.TridyPrediktora.Count > MIN_POCET_TRID_PRED_A 
+				if (u.PredikovanyAtribut.TridyPrediktora.Count > MIN_POCET_TRID_PRED_A 		//zkontroluj stop kriteria
 				    && u.Design.Data.Rows.Count-1 > MIN_POCET_ZAZNAMU){		
 					stop = false;
-					setAlg(u);
-					vyberNej(u);
-					rozdelPodleNej(u);
+					setAlg(u);			//spust prislusnou statistickou metodu podle vyberu v combu
+					vyberNej(u);		//vyber nejlepsiho prediktora podle vypoctu
+					rozdelPodleNej(u);	//rozdel uzel
 					
 				}
 				
@@ -203,6 +213,7 @@ namespace franz
 			if(stop) {krok.Enabled = false; vypocty.Items[vypocty.Items.Count-1].Remove(); return;}
 		}
 		
+		//metoda pro vypocet informacniho zisku
 		private void spocitej_IFZ(Uzel u){
 			int pocetZaznamu = u.Design.Data.Rows.Count;
 			foreach (Prediktor p in u.Prediktori){
@@ -218,17 +229,19 @@ namespace franz
 			}			
 		}
 
+		//metoda pro vypocet podminene entropie
 		void spocitej_Entropy(Uzel u)
 		{
 			double entropyPred = 0;
 			int pocetZaznamu = u.Design.Data.Rows.Count;
-			foreach(Prediktor p in u.Prediktori){
+			foreach(Prediktor p in u.Prediktori){		//projdi vsechny prediktory v uzlu
+				if (p.Enable){
 				string jmPred = p.Name;
 				double vysledek = 0;
-				foreach(Kategorie k in p.TridyPrediktora){
-					string key = jmPred+"."+k.JmTridy;
+				foreach(Kategorie k in p.TridyPrediktora){		//projdi vsechny tridy prediktora
+					string key = jmPred+"."+k.JmTridy;			//KEY pro tabulku zavislosti
 					
-					foreach(Kategorie trida in tabulkaZavislosti[key]){
+					foreach(Kategorie trida in tabulkaZavislosti[key]){			//projdi cetnosti v tabulce zavisloti podle KEY
 						double podil = trida.PocetVyskytu / k.PocetVyskytu;
 						vysledek += podil * Math.Log(podil, 2);
 					}
@@ -236,7 +249,7 @@ namespace franz
 				}
 				entropyPred = vysledek;
 				double zisk = 0;
-				for (int i = 0; i < p.TridyPrediktora.Count; i++){
+				for (int i = 0; i < p.TridyPrediktora.Count; i++){			//projdi znova vsechny tridy prediktora a dopocitej zisk
 					double podil = p.TridyPrediktora[i].PocetVyskytu / pocetZaznamu;
 					zisk += podil * entropyPred;
 				}
@@ -244,13 +257,21 @@ namespace franz
 				p.Zisk = (-1)*zisk;
 				vypocty.Items.Add(p.Name + " " + p.Zisk);
 			}
+			}
+		}
+		
+		//metoda pro vypocet GINI indexu
+		void spictej_GINI(Uzel u){
 			
 		}
+		
+		//pomocna metoda pro pocitani nepodminene entropie
 		private double Entropy(double pocetVyskytu, double count){
 			double podil = pocetVyskytu / count;
 			return podil * Math.Log(podil, 2);
 		}
 		
+		//pomocna metoda pro vypocet celkoveho zisku
 		private void meziVysledky(double pocetZaznamu, Prediktor cetnosti){
 			double vysledek = 0;
 			double suma = cetnosti.TridyPrediktora.Sum(X => Entropy(X.PocetVyskytu, pocetZaznamu));			
@@ -259,11 +280,13 @@ namespace franz
 			vysledek = 0;
 		}
 		
+		//metoda pro vybrani nejlepsiho prediktora
 		private void vyberNej(Uzel u){
 			double nej = 0;
+			//vyber spravne rozhodovaci podminky pro statistickou metodu
 			if (startIFZ) nej = Double.MinValue;
 			if (startE) nej = Double.MaxValue;
-			//if (startGINI) nej = Double.MinValue;
+			if (startGINI) nej = Double.MinValue;
 			Prediktor nejP = null;
 			foreach (Prediktor p in u.Prediktori){
 				if (p.Zisk > nej && p.Enable && startIFZ){
@@ -273,13 +296,12 @@ namespace franz
 				if (p.Zisk < nej && p.Enable && startE){
 					nej = p.Zisk;
 					nejP = p;
-				}
-				/*
+				}				
 				if (p.Zisk > nej && p.Enable && startGINI){
 					nej = p.Zisk;
 					nejP = p;
 				}
-				*/
+				
 			}
 			if (nejP != null){
 				u.Prediktori.Find(p => p == nejP).Best = false;
@@ -287,23 +309,23 @@ namespace franz
 			}
 		}
 		
-		
+		//metoda pro rozdeleni uzlu podle nejlepsiho prediktora
 		private void rozdelPodleNej(Uzel u){		
-			uzlyVKrocich = new List<Uzel>();
-			DataTable dt = u.Design.Data;
-			Prediktor nejP = u.Prediktori.Find(p => p.Best == false);
-			if (nejP == null) {stop=true; return;}
-			for(int i = 0; i < nejP.TridyPrediktora.Count; i++){
-				var novyUzel = new Uzel(nejP.Name, nejP.TridyPrediktora[i].JmTridy, u.PredikovanyAtribut.Name);								
-				var newTable = new DataTable();
-				newTable = dt.Copy();
-				newTable.Rows.Clear();
-				for (int j = 0; j < dt.Rows.Count; j++){					
-					if (nejP.TridyPrediktora[i].JmTridy == dt.Rows[j][nejP.Name].ToString())
-						newTable.Rows.Add(dt.Rows[j].ItemArray);
+			uzlyVKrocich = new List<Uzel>();		//vytvor novy seznam pro dalsi krok
+			DataTable dt = u.Design.Data;			//tabulka pro deleni
+			Prediktor nejP = u.Prediktori.Find(p => p.Best == false);	//vrat ze seznamu nejlepsiho prediktora
+			if (nejP == null) {stop=true; return;}	//jestli uz zadny neni -> skonci :-)
+			for(int i = 0; i < nejP.TridyPrediktora.Count; i++){	//projdi vsechny tridy nejlepsiho prediktora
+				var novyUzel = new Uzel(nejP.Name, nejP.TridyPrediktora[i].JmTridy, u.PredikovanyAtribut.Name);		//vytvor novy uzel podle vstupniho							
+				var newTable = new DataTable();					//vytvor novou tabulku pro novy uzel
+				newTable = dt.Copy();							//prekopiruj vsechna data
+				newTable.Rows.Clear();							//vymaz radky
+				for (int j = 0; j < dt.Rows.Count; j++){		//projdi vsechny radky vstupni tabulky	
+					if (nejP.TridyPrediktora[i].JmTridy == dt.Rows[j][nejP.Name].ToString())	//vybirej vzdy jen jednu tridu prediktora
+						newTable.Rows.Add(dt.Rows[j].ItemArray);	//vloz novy radek
 				}
-				novyUzel.Design.Data = newTable;
-				
+				novyUzel.Design.Data = newTable;	//nastaveni nove tabulky novemu uzlu
+				//pomocny list prediktoru, ktery je pak nastaven novemu uzlu
 				var pom = new List<Prediktor>();
 				foreach (Prediktor copyP in u.Prediktori)
 				pom.Add(new Prediktor {
@@ -312,21 +334,20 @@ namespace franz
 				});				
 				novyUzel.Prediktori.AddRange(pom.ToArray());
 				novyUzel.Prediktori.Find(p => p.Name == nejP.Name).Enable = false;
-				uzlyVKrocich.Add(novyUzel);
+				uzlyVKrocich.Add(novyUzel);	//pridej uzel do listu uzlu pro aktualni krok
 			}		
 			
 			
-			strom.Add(uzlyVKrocich);
+			strom.Add(uzlyVKrocich); //pridej uzly kroku do stromu a pridej buttony na panel
 			foreach(Uzel but in strom[strom.Count-1]){
-				//but.Design.clickUzel(new object(), new EventArgs());
-				but.Design.Uzel.Location = new Point(x, y);
-				panel1.Controls.Add(but.Design.Uzel);
+				but.Design.UzelB.Location = new Point(x, y);			
+				panel1.Controls.Add(but.Design.UzelB);
 				x+=120;
 			}
 			y += 25;
 			x=0;
 		}
-			
+		//volani statistickych metod podle comba	
 		bool startE = false, startIFZ = false, startGINI = false;
 		private void setAlg(Uzel u){
 			string jmAlg = algoritmy.Items[algoritmy.SelectedIndex].ToString();

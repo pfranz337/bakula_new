@@ -9,6 +9,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Linq;
 
 namespace franz
 {
@@ -81,10 +82,39 @@ namespace franz
                 if (testCil || PredikovanyAtribut.TridyPrediktora.Count == 0) 
                 	PredikovanyAtribut.TridyPrediktora.Add(new Kategorie 
                 	     {JmTridy = table.Rows[i][PredikovanyAtribut.Name].ToString(), PocetVyskytu = 1});
-                nazevSloupce = PredikovanyAtribut.Name;							//PROC TO TU JE TENTO RADEK?????
-                trida = table.Rows[i][PredikovanyAtribut.Name].ToString();		//PROC TO TU JE TENTO RADEK?????
+                nazevSloupce = PredikovanyAtribut.Name;							
+                trida = table.Rows[i][PredikovanyAtribut.Name].ToString();		
                 
         	}
+			if (PredikovanyAtribut != null)
+				setTablesCetnosti();
+		}
+		
+		private void setTablesCetnosti(){
+			List<Prediktor> zapnute = Prediktori;
+			Design.tablesCetnosti = new List<System.Windows.Forms.DataGridView>();
+			
+			int y = 0;
+			for(int i = 0; i < zapnute.Count; i++){
+				var table = new DataTable();
+				var grid = new System.Windows.Forms.DataGridView();
+				grid = new System.Windows.Forms.DataGridView {
+					Size = new System.Drawing.Size(180, 145),
+				};
+				table.Columns.Add(zapnute[i].Name);
+				table.Columns.Add("Pocet");
+				foreach(Kategorie k in Prediktori[i].TridyPrediktora){
+					var radek = new object[2];
+					radek[0] = k.JmTridy; radek[1] = k.PocetVyskytu;
+					table.Rows.Add(radek);					
+				}
+				grid.Location = new System.Drawing.Point(0, y);	
+				grid.DataSource = table;
+				if (zapnute[i].Enable){
+					Design.tablesCetnosti.Add(grid);;											
+					y+=150;
+				}
+			}
 		}
 		
 		public Dictionary<string, List<Kategorie>> pocitaniKategoriiVZavislosti(){
