@@ -120,7 +120,604 @@
   <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="menuStrip1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="menuStrip1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>884, 27</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="menuStrip1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="menuStrip1.Text" xml:space="preserve">
+    <value>menuStrip1</value>
+  </data>
+  <data name="&gt;&gt;menuStrip1.Name" xml:space="preserve">
+    <value>menuStrip1</value>
+  </data>
+  <data name="&gt;&gt;menuStrip1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;menuStrip1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;menuStrip1.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="openToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 23</value>
+  </data>
+  <data name="openToolStripMenuItem.Text" xml:space="preserve">
+    <value>Open</value>
+  </data>
+  <data name="openToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>67, 22</value>
+  </data>
+  <data name="openToolStripMenuItem1.ToolTipText" xml:space="preserve">
+    <value>Otevře dialogové okno pro výběr vstupních dat</value>
+  </data>
+  <data name="nastaveníToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>67, 22</value>
+  </data>
+  <data name="nastaveníToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>Nastavení aplikace</value>
+  </data>
+  <data name="zapVypHintyToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>148, 22</value>
+  </data>
+  <data name="zapVypHintyToolStripMenuItem.Text" xml:space="preserve">
+    <value>Zap./Vyp. tipy</value>
+  </data>
+  <data name="nápovědaToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>67, 22</value>
+  </data>
+  <data name="nápovědaToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>Nápověda k aplikaci</value>
+  </data>
+  <data name="algoritmy.AccessibleName" xml:space="preserve">
+    <value>Algoritmy</value>
+  </data>
+  <data name="algoritmy.Items" xml:space="preserve">
+    <value>Informační zisk</value>
+  </data>
+  <data name="algoritmy.Items1" xml:space="preserve">
+    <value>Podmíněná entropie</value>
+  </data>
+  <data name="algoritmy.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 23</value>
+  </data>
+  <data name="algoritmy.ToolTipText" xml:space="preserve">
+    <value>Vyber</value>
+  </data>
+  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>221, 17</value>
+  </metadata>
+  <data name="vypocty.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial Narrow, 12pt</value>
+  </data>
+  <data name="vypocty.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 362</value>
+  </data>
+  <data name="vypocty.Size" type="System.Drawing.Size, System.Drawing">
+    <value>164, 263</value>
+  </data>
+  <data name="vypocty.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="vypocty.ToolTip" xml:space="preserve">
+    <value>Seznam všech výpočtů</value>
+  </data>
+  <data name="&gt;&gt;vypocty.Name" xml:space="preserve">
+    <value>vypocty</value>
+  </data>
+  <data name="&gt;&gt;vypocty.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;vypocty.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;vypocty.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="krok.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 635</value>
+  </data>
+  <data name="krok.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 33</value>
+  </data>
+  <data name="krok.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="krok.Text" xml:space="preserve">
+    <value>Krok</value>
+  </data>
+  <data name="krok.ToolTip" xml:space="preserve">
+    <value>Krokování</value>
+  </data>
+  <data name="&gt;&gt;krok.Name" xml:space="preserve">
+    <value>krok</value>
+  </data>
+  <data name="&gt;&gt;krok.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;krok.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;krok.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="spust.Location" type="System.Drawing.Point, System.Drawing">
+    <value>93, 635</value>
+  </data>
+  <data name="spust.Size" type="System.Drawing.Size, System.Drawing">
+    <value>83, 33</value>
+  </data>
+  <data name="spust.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="spust.Text" xml:space="preserve">
+    <value>Spust</value>
+  </data>
+  <data name="spust.ToolTip" xml:space="preserve">
+    <value>Spuť vše</value>
+  </data>
+  <data name="&gt;&gt;spust.Name" xml:space="preserve">
+    <value>spust</value>
+  </data>
+  <data name="&gt;&gt;spust.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;spust.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;spust.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
   <metadata name="openFile.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>126, 17</value>
   </metadata>
+  <data name="sloupceTab.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial Narrow, 12pt</value>
+  </data>
+  <data name="sloupceTab.ItemHeight" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="sloupceTab.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 30</value>
+  </data>
+  <data name="sloupceTab.Size" type="System.Drawing.Size, System.Drawing">
+    <value>164, 124</value>
+  </data>
+  <data name="sloupceTab.TabIndex" type="System.Int32, mscorlib">
+    <value>38</value>
+  </data>
+  <data name="sloupceTab.ToolTip" xml:space="preserve">
+    <value>Seznam atributů ze vstupních dat</value>
+  </data>
+  <data name="&gt;&gt;sloupceTab.Name" xml:space="preserve">
+    <value>sloupceTab</value>
+  </data>
+  <data name="&gt;&gt;sloupceTab.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;sloupceTab.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;sloupceTab.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="setCil.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 157</value>
+  </data>
+  <data name="setCil.Size" type="System.Drawing.Size, System.Drawing">
+    <value>164, 23</value>
+  </data>
+  <data name="setCil.TabIndex" type="System.Int32, mscorlib">
+    <value>37</value>
+  </data>
+  <data name="setCil.Text" xml:space="preserve">
+    <value>SET MAIN ATRIBUT</value>
+  </data>
+  <data name="setCil.ToolTip" xml:space="preserve">
+    <value>Nastavení predikovaného atributu. Vyber jeden item z atributů a klikni na mě.</value>
+  </data>
+  <data name="&gt;&gt;setCil.Name" xml:space="preserve">
+    <value>setCil</value>
+  </data>
+  <data name="&gt;&gt;setCil.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;setCil.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;setCil.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="cilNahoru.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="cilNahoru.Location" type="System.Drawing.Point, System.Drawing">
+    <value>182, 313</value>
+  </data>
+  <data name="cilNahoru.Size" type="System.Drawing.Size, System.Drawing">
+    <value>20, 44</value>
+  </data>
+  <data name="cilNahoru.TabIndex" type="System.Int32, mscorlib">
+    <value>36</value>
+  </data>
+  <data name="cilNahoru.Text" xml:space="preserve">
+    <value>↑</value>
+  </data>
+  <data name="cilNahoru.ToolTip" xml:space="preserve">
+    <value>Vrátí predikovaný atribut do atributů</value>
+  </data>
+  <data name="&gt;&gt;cilNahoru.Name" xml:space="preserve">
+    <value>cilNahoru</value>
+  </data>
+  <data name="&gt;&gt;cilNahoru.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cilNahoru.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cilNahoru.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="itemDolu.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="itemDolu.Location" type="System.Drawing.Point, System.Drawing">
+    <value>182, 81</value>
+  </data>
+  <data name="itemDolu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>20, 70</value>
+  </data>
+  <data name="itemDolu.TabIndex" type="System.Int32, mscorlib">
+    <value>35</value>
+  </data>
+  <data name="itemDolu.Text" xml:space="preserve">
+    <value>↓</value>
+  </data>
+  <data name="itemDolu.ToolTip" xml:space="preserve">
+    <value>Nastaví vybranné atributy jako prediktory a přidá je do seznamu prediktorů</value>
+  </data>
+  <data name="&gt;&gt;itemDolu.Name" xml:space="preserve">
+    <value>itemDolu</value>
+  </data>
+  <data name="&gt;&gt;itemDolu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;itemDolu.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;itemDolu.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="predNahoru.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="predNahoru.Location" type="System.Drawing.Point, System.Drawing">
+    <value>182, 187</value>
+  </data>
+  <data name="predNahoru.Size" type="System.Drawing.Size, System.Drawing">
+    <value>20, 70</value>
+  </data>
+  <data name="predNahoru.TabIndex" type="System.Int32, mscorlib">
+    <value>34</value>
+  </data>
+  <data name="predNahoru.Text" xml:space="preserve">
+    <value>↑</value>
+  </data>
+  <data name="predNahoru.ToolTip" xml:space="preserve">
+    <value>Vrátí prediktory do seznamu atributů.</value>
+  </data>
+  <data name="&gt;&gt;predNahoru.Name" xml:space="preserve">
+    <value>predNahoru</value>
+  </data>
+  <data name="&gt;&gt;predNahoru.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;predNahoru.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;predNahoru.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="prediktori.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial Narrow, 12pt</value>
+  </data>
+  <data name="prediktori.ItemHeight" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="prediktori.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 186</value>
+  </data>
+  <data name="prediktori.Size" type="System.Drawing.Size, System.Drawing">
+    <value>164, 124</value>
+  </data>
+  <data name="prediktori.TabIndex" type="System.Int32, mscorlib">
+    <value>39</value>
+  </data>
+  <data name="prediktori.ToolTip" xml:space="preserve">
+    <value>Seznam prediktorů nastavených z atributů</value>
+  </data>
+  <data name="&gt;&gt;prediktori.Name" xml:space="preserve">
+    <value>prediktori</value>
+  </data>
+  <data name="&gt;&gt;prediktori.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;prediktori.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;prediktori.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="pred_atribut.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial Narrow, 12pt</value>
+  </data>
+  <data name="pred_atribut.ItemHeight" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="pred_atribut.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 313</value>
+  </data>
+  <data name="pred_atribut.Size" type="System.Drawing.Size, System.Drawing">
+    <value>164, 44</value>
+  </data>
+  <data name="pred_atribut.TabIndex" type="System.Int32, mscorlib">
+    <value>40</value>
+  </data>
+  <data name="pred_atribut.ToolTip" xml:space="preserve">
+    <value>Predikovaný atribut</value>
+  </data>
+  <data name="&gt;&gt;pred_atribut.Name" xml:space="preserve">
+    <value>pred_atribut</value>
+  </data>
+  <data name="&gt;&gt;pred_atribut.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pred_atribut.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;pred_atribut.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>221, 17</value>
+  </metadata>
+  <metadata name="statusStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>618, 17</value>
+  </metadata>
+  <data name="statusStrip1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 674</value>
+  </data>
+  <data name="statusStrip1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>884, 22</value>
+  </data>
+  <data name="statusStrip1.TabIndex" type="System.Int32, mscorlib">
+    <value>43</value>
+  </data>
+  <data name="statusStrip1.Text" xml:space="preserve">
+    <value>statusStrip1</value>
+  </data>
+  <data name="&gt;&gt;statusStrip1.Name" xml:space="preserve">
+    <value>statusStrip1</value>
+  </data>
+  <data name="&gt;&gt;statusStrip1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.StatusStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;statusStrip1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;statusStrip1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="status_Clock.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 17</value>
+  </data>
+  <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>434, 17</value>
+  </metadata>
+  <metadata name="backgroundWorker1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>734, 17</value>
+  </metadata>
+  <data name="picture.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="picture.Size" type="System.Drawing.Size, System.Drawing">
+    <value>670, 635</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="picture.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>AutoSize</value>
+  </data>
+  <data name="picture.TabIndex" type="System.Int32, mscorlib">
+    <value>44</value>
+  </data>
+  <data name="&gt;&gt;picture.Name" xml:space="preserve">
+    <value>picture</value>
+  </data>
+  <data name="&gt;&gt;picture.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;picture.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;picture.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="panel1.AutoScroll" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>208, 30</value>
+  </data>
+  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>676, 641</value>
+  </data>
+  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
+    <value>45</value>
+  </data>
+  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="zobrazeníToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>71, 23</value>
+  </data>
+  <data name="zobrazeníToolStripMenuItem.Text" xml:space="preserve">
+    <value>Zobrazení</value>
+  </data>
+  <data name="středToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 22</value>
+  </data>
+  <data name="středToolStripMenuItem.Text" xml:space="preserve">
+    <value>Střed</value>
+  </data>
+  <data name="possInPic.Size" type="System.Drawing.Size, System.Drawing">
+    <value>63, 17</value>
+  </data>
+  <data name="possInPic.Text" xml:space="preserve">
+    <value>{X=0; Y=0}</value>
+  </data>
+  <data name="přejítNaToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 22</value>
+  </data>
+  <data name="přejítNaToolStripMenuItem.Text" xml:space="preserve">
+    <value>Přejít na</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>63</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>96, 96</value>
+  </data>
+  <data name="$this.AutoScroll" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>884, 696</value>
+  </data>
+  <data name="$this.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>900, 735</value>
+  </data>
+  <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>900, 735</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Klasifikační algoritmy</value>
+  </data>
+  <data name="&gt;&gt;openToolStripMenuItem.Name" xml:space="preserve">
+    <value>openToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;openToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;openToolStripMenuItem1.Name" xml:space="preserve">
+    <value>openToolStripMenuItem1</value>
+  </data>
+  <data name="&gt;&gt;openToolStripMenuItem1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nastaveníToolStripMenuItem.Name" xml:space="preserve">
+    <value>nastaveníToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;nastaveníToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;zapVypHintyToolStripMenuItem.Name" xml:space="preserve">
+    <value>zapVypHintyToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;zapVypHintyToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nápovědaToolStripMenuItem.Name" xml:space="preserve">
+    <value>nápovědaToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;nápovědaToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;algoritmy.Name" xml:space="preserve">
+    <value>algoritmy</value>
+  </data>
+  <data name="&gt;&gt;algoritmy.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;openFile.Name" xml:space="preserve">
+    <value>openFile</value>
+  </data>
+  <data name="&gt;&gt;openFile.Type" xml:space="preserve">
+    <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolTip1.Name" xml:space="preserve">
+    <value>toolTip1</value>
+  </data>
+  <data name="&gt;&gt;toolTip1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;status_Clock.Name" xml:space="preserve">
+    <value>status_Clock</value>
+  </data>
+  <data name="&gt;&gt;status_Clock.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;timer1.Name" xml:space="preserve">
+    <value>timer1</value>
+  </data>
+  <data name="&gt;&gt;timer1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;backgroundWorker1.Name" xml:space="preserve">
+    <value>backgroundWorker1</value>
+  </data>
+  <data name="&gt;&gt;backgroundWorker1.Type" xml:space="preserve">
+    <value>System.ComponentModel.BackgroundWorker, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;zobrazeníToolStripMenuItem.Name" xml:space="preserve">
+    <value>zobrazeníToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;zobrazeníToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;středToolStripMenuItem.Name" xml:space="preserve">
+    <value>středToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;středToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;possInPic.Name" xml:space="preserve">
+    <value>possInPic</value>
+  </data>
+  <data name="&gt;&gt;possInPic.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;přejítNaToolStripMenuItem.Name" xml:space="preserve">
+    <value>přejítNaToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;přejítNaToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>DataMining</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

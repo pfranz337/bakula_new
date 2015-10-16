@@ -10,7 +10,6 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
-using System.Security.Permissions;
 using System.Windows.Forms;
 
 namespace franz
@@ -20,22 +19,28 @@ namespace franz
 	/// </summary>
 	public class UzelDesign
 	{
-		public UzelDesign() 
-		{				
-			UzelB = new Button {
-				Text = "INPUT", 				
+        public UzelDesign() 
+		{
+            UzelB = new Button {
+				Text = "VSTUPNÍ DATA", AutoSize = true, Name = "uzel"		
 			};
 			UzelB.Click += clickUzel;
+            Rozdeleno = true;
 		}
 		public UzelDesign(string jmPred, string jmTrid)
 		{				
 			UzelB = new Button {
 				Text = jmPred + " " + jmTrid, AutoSize = true,
-			};
+                Name = "uzel"
+            };
 			UzelB.Click += clickUzel;
-		}
+            Rozdeleno = true;
+        }
 		
-		public Form DataForm {
+        public bool? Rozdeleno { get; set; }
+        public string cil { get; set; }
+
+        public Form DataForm {
 			get;
 			private set;
 		}
@@ -64,7 +69,13 @@ namespace franz
 			
 		}
 		
-		public void clickUzel(object sender, EventArgs e)
+		public DataGridView dataGrid{
+			get;
+			private set;
+		}
+        public IntPtr Handle { get; private set; }
+
+        public void clickUzel(object sender, EventArgs e)
 		{			
 			UzelB.Enabled = false;
 			DataForm = new Form{ //vytvoreni noveho formu pro kazdy uzel
@@ -73,33 +84,43 @@ namespace franz
 				StartPosition = FormStartPosition.CenterScreen
 			};			
 			DataForm.FormClosing += zavriData;
-			DataForm.Controls.Add(new DataGridView 
+			DataForm.Controls.Add(dataGrid = new DataGridView 
 			    { 
 			    	DataSource = Data,
 					Anchor = ((AnchorStyles)(AnchorStyles.Top | AnchorStyles.Bottom |
 						AnchorStyles.Left | AnchorStyles.Right)),
 					ScrollBars = ScrollBars.Both,
-					Size = new Size(580, 560),	
+					Size = new Size(580, 560),						
 			    });
 			DataForm.Show();
 			CetnostiForm = new Form {				
 				MaximumSize = new Size(250, 600),	
 				MinimumSize = new Size(250, 600),	
 				AutoScroll = true,
-			};
+                ControlBox = false
+			};	
 			if (tablesCetnosti != null){
 				CetnostiForm.Controls.AddRange(tablesCetnosti.ToArray());
 				CetnostiForm.Show();
 				CetnostiForm.Location = new Point(DataForm.Location.X + DataForm.Width, DataForm.Location.Y);
+                
 			}
-			
-		}
+            CetnostiForm.FormClosing += stopClosing;
+            if (Rozdeleno == false)
+                dataGrid.Columns[cil].DefaultCellStyle.BackColor = Color.Green;            
+            string prediktor = UzelB.Text.Split(' ')[0];
+            if(Rozdeleno != null)
+                dataGrid.Columns[prediktor].DefaultCellStyle.BackColor = Color.LightBlue;
 
-		void zavriData(object sender, EventArgs e)
+        }
+
+        private void stopClosing(object sender, FormClosingEventArgs e) { e.Cancel = true; }
+
+        void zavriData(object sender, EventArgs e)
 		{
-			CetnostiForm.Close();
+            CetnostiForm.Visible = false;
 			
 			UzelB.Enabled = true;
 		}
-	}
+     }
 }

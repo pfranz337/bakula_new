@@ -6,3 +6,10 @@
 \\SERVER1\RedirectedFolders\franz\My Documents\SharpDevelop Projects\franz\franz\obj\Debug\franz.exe
 \\SERVER1\RedirectedFolders\franz\My Documents\SharpDevelop Projects\franz\franz\obj\Debug\franz.pdb
 \\SERVER1\RedirectedFolders\franz\My Documents\SharpDevelop Projects\franz\franz\obj\Debug\franz.DataMining.resources
+\\SERVER1\RedirectedFolders\franz\My Documents\SharpDevelop Projects\franz\franz\obj\Debug\franz.DataMining.cs-CZ.resources
+\\SERVER1\RedirectedFolders\franz\My Documents\SharpDevelop Projects\franz\franz\obj\Debug\cs-CZ\franz.resources.dll
+\\SERVER1\RedirectedFolders\franz\My Documents\SharpDevelop Projects\franz\franz\bin\Debug\cs-CZ\franz.resources.dll
+\\SERVER1\RedirectedFolders\franz\My Documents\SharpDevelop Projects\franz\franz\obj\Debug\franz.Napoveda.resources
+\\SERVER1\RedirectedFolders\franz\My Documents\SharpDevelop Projects\franz\franz\obj\Debug\franz.autor.resources
+\\SERVER1\RedirectedFolders\franz\My Documents\SharpDevelop Projects\franz\franz\obj\Debug\franz.popisAp.resources
+\\SERVER1\RedirectedFolders\franz\My Documents\SharpDevelop Projects\franz\franz\obj\Debug\franz.Properties.Resources.resources

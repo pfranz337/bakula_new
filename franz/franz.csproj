@@ -8,8 +8,9 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>franz</RootNamespace>
     <AssemblyName>franz</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <AppDesignerFolder>Properties</AppDesignerFolder>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
     <PlatformTarget>x86</PlatformTarget>
@@ -50,14 +51,39 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataMining.cs" />
+    <Compile Include="autor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="autor.Designer.cs">
+      <DependentUpon>autor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataMining.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="DataMining.Designer.cs">
       <DependentUpon>DataMining.cs</DependentUpon>
     </Compile>
     <Compile Include="Kategorie.cs" />
+    <Compile Include="Napoveda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Napoveda.Designer.cs">
+      <DependentUpon>Napoveda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="popisAp.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="popisAp.Designer.cs">
+      <DependentUpon>popisAp.cs</DependentUpon>
+    </Compile>
     <Compile Include="Prediktor.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Uzel.cs" />
     <Compile Include="UzelDesign.cs" />
   </ItemGroup>
@@ -65,8 +91,24 @@
     <None Include="app.config" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="autor.resx">
+      <DependentUpon>autor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataMining.cs-CZ.resx">
+      <DependentUpon>DataMining.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DataMining.resx">
       <DependentUpon>DataMining.Designer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Napoveda.resx">
+      <DependentUpon>Napoveda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="popisAp.resx">
+      <DependentUpon>popisAp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -10,6 +10,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Threading;
 
 namespace franz
 {
@@ -22,14 +23,22 @@ namespace franz
 		{
 			Design = new UzelDesign();
 			Prediktori = new List<Prediktor>();
+            Design.Rozdeleno = null;
 		}
 		public Uzel(string jmP, string jmT, string predikovanyAtr)
 		{
-			Design = new UzelDesign(jmP, jmT);		
+			Design = new UzelDesign(jmP, jmT);
+            Design.cil = predikovanyAtr;	
 			Prediktori = new List<Prediktor>();
 			JmPrediktora = jmP; JmTridy = jmT; 
 			PredikovanyAtribut = new Prediktor {Enable = true, Name = predikovanyAtr};
 		}
+		
+		/*public Thread VLAKNO{
+			get;
+			set;
+		}*/
+		
 		//design uzlu
 		public UzelDesign Design {
 			get;
@@ -54,8 +63,9 @@ namespace franz
 		public Prediktor PredikovanyAtribut {
 			get;
 			set;
-		}		
-		public void pocitaniKategorii(){	//pocitani kategorii prediktoru
+		}
+
+        public void pocitaniKategorii(){	//pocitani kategorii prediktoru
 			DataTable table = Design.Data;
 			for (int i = 0; i < table.Rows.Count; i++)
             {
